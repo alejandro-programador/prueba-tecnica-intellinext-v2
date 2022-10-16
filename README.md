@@ -1,4 +1,4 @@
-# Intelli-next
+# ⭐ Intelli-next ⭐
 
 ## Pasos a seguir: 🚀
 
@@ -14,4 +14,4 @@
 
 Listo.
 
-**By: Alejandro Perez.**
+**By: Alejandro Perez. ⭐⭐⭐⭐⭐**
