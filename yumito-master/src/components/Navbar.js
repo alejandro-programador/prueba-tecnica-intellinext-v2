@@ -3,14 +3,24 @@ import '../css/navbar.css'
 import {Link} from 'react-router-dom';
 import OfferModal from './OfferModal';
 import {useDispatch, useSelector} from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import {changeThemeAction} from '../redux/reducers/Theme'
 
 function Navbar() {
   //console.log("navbar rendered");
 
+    const dispatch = useDispatch();
+    const [t, i18n] = useTranslation("global");
+    const language = useSelector(store => store.LanguageReducer.lng);
+
+    React.useEffect( () => {
+      const changeLanguage = () => {
+        i18n.changeLanguage(language);
+      }
+
+      changeLanguage();
+    },[language] )
   
-  
-  const dispatch = useDispatch();
 
     return (
       <>
@@ -33,13 +43,13 @@ function Navbar() {
         </div>
         <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabIndex="-1" id="about-hotel">
         <div className="offcanvas-header">
-          <h2 className="offcanvas-title" id="about-hotel">¿Quienes Somos?</h2>
+          <h2 className="offcanvas-title" id="about-hotel">{t("header.about")}</h2>
           <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div className="offcanvas-body px-3">
           <hr/>
           <div>
-          Nuestros 10 años de experiencia han consolidado a Intelli Next como una empresa ﬁable en proyectos orientados a la identificación biométrica. Nuestra presencia ha llegado a 3 países como lo son; Colombia, Venezuela y EEUU. Nuestro nombre genera conﬁanza en más de 1.000 clientes satisfechos hasta la actualidad, nos caracterizamos por abarcar la mayor cantidad de mercados a nivel gubernamental, industrial, comercial, residencial, salud, minero, educativo, construcción, la hostelería y empresarial.
+          {t("header.about-description")}
           </div>
          <hr/>
          <div className="d-flex flex-wrap">

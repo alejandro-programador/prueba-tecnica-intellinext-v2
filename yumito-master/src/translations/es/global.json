@@ -1,0 +1,19 @@
+{
+    "header": {
+        
+        "hello-world": "Hola Mundo",
+        "about": "Nosotros",
+        "language-es": "Español",
+        "language-en": "Inglés",
+        "contact": "Contáctanos",
+        "home": "Inicio",
+
+        "about-description" : "Nuestros 10 años de experiencia han consolidado a Intelli Next como una empresa ﬁable en proyectos orientados a la identificación biométrica. Nuestra presencia ha llegado a 3 países como lo son; Colombia, Venezuela y EEUU. Nuestro nombre genera confianza en más de 1.000 clientes satisfechos hasta la actualidad, nos caracterizamos por abarcar la mayor cantidad de mercados a nivel gubernamental, industrial, comercial, residencial, salud, minero, educativo, construcción, la hostelería y empresarial.",
+    
+        "category-hot" : "Caliente",
+        "category-new" : "Nuevo",
+        "category-rising" : "Creciente",
+
+        "back-btn" : "Volver"
+    }
+}

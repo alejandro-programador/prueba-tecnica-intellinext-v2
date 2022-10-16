@@ -1,0 +1,18 @@
+{
+    "header": {
+        "hello-world": "Hello World",
+        "about": "About Us",
+        "language-es": "Spanish",
+        "language-en": "English",
+        "contact": "Contact Us",
+        "home": "Home",
+
+        "about-description" : "Our 10 years of experience have consolidated Intelli Next as a reliable company in projects aimed at biometric identification. Our presence has reached 3 countries as they are; Colombia, Venezuela and USA. Our name generates trust in more than 1,000 satisfied customers to date, we are known for covering the largest number of markets at the government, industrial, commercial, residential, health, mining, educational, construction, hospitality and business levels.",
+    
+        "category-hot" : "Hot",
+        "category-new" : "New",
+        "category-rising" : "Rising",
+
+        "back-btn" : "Back"
+    }
+}

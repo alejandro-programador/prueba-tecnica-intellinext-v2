@@ -4,9 +4,11 @@ import thunk from 'redux-thunk';
 
 // reducers
 import ThemeReducer from './reducers/Theme';
+import LanguageReducer from './reducers/Language';
 
 const rootReducers = combineReducers({
-    ThemeReducer
+    ThemeReducer,
+    LanguageReducer
 });
 
 const store = createStore(rootReducers, composeWithDevTools(

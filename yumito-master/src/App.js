@@ -142,7 +142,7 @@ function App() {
           <div className="container-fluid">
             <div className='row text-end'>
               <div className='col-12 bg-dark py-2'>
-                <button className='btn btn-outline-light text-capitalize' onClick={() => themeToggler()}>Modo { (theme === "light") ? 'Dark' : 'Light' }</button>
+                <button className='btn btn-outline-light text-capitalize' onClick={() => themeToggler()}>{ (theme === "light") ? 'Dark' : 'Light' } Mode</button>
               </div>
             </div>
           </div>
