@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 function CategoryBar() {
   //console.log("CategoryBar rendered");
@@ -12,7 +13,7 @@ function CategoryBar() {
     <div className="collapse navbar-collapse" id="navbarNavDropdown">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link" href="./"> <i className="bi bi-chevron-left px-1"></i> Volver</a>
+          <Link to="/"><button type="button" className="btn btn-outline-dark rounded-pill btn-sm m-2 mx-1"><i className="bi bi-chevron-left px-1"></i> Volver</button></Link>
         </li>
       </ul>
     </div>

@@ -1,8 +1,12 @@
-import React,{useReducer} from 'react';
+import React,{useReducer, useState} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import DashboardLayout from './components/DashboardLayout';
 import LoginLayout from './components/LoginLayout';
 import axios from 'axios';
+import styled, {ThemeProvider} from 'styled-components';
+import {lightTheme, darkTheme, GlobalStyles} from './Theme';
+import { Provider } from 'react-redux';
+import reduxStore from './redux/store';
 var store = require('store');
 
 export const itemContext = React.createContext();
@@ -107,28 +111,62 @@ const myReducer= (state=initialState, action)=>{
   }
 }
 
+const styledApp = styled.div`
+
+  color: ${(props) => props.theme.fontColor};
+
+`
+
 function App() {
   const [myState, dispatch] = useReducer(myReducer, initialState);
+  const [theme, setTheme] = useState('light');
+
+  const themeToggler = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light');
+    localStorage.setItem('theme', theme);
+  }
+
+  React.useEffect(() => {
+    const checkTheme = () => {
+      const myTheme = localStorage.getItem('theme');
+    }
+  },[])
+
   return (
-    <div className="App">   
-      <itemContext.Provider value={{state: myState, method:dispatch}}>
-      <Router>
-        <Switch>
-               <Route exact path='/' render={props => <DashboardLayout {...props}/>}/>
-               <Route path='/login'  render={props => <LoginLayout {...props}/>}/>
-               <Route path='/register' render={props => <LoginLayout {...props}/>}/>
-               <Route path='/menu' render={props => <DashboardLayout data={myState} {...props}/>}/>
-               <Route path='/hot' render={props => <DashboardLayout data={myState} {...props}/>}/>
-               <Route path='/new' render={props => <DashboardLayout data={myState} {...props}/>}/>
-               <Route path='/rising' render={props => <DashboardLayout data={myState} {...props}/>}/>
-               <Route path='/editProfile' render={props => <DashboardLayout {...props}/>}/>
-               <Route path='/checkout' render={props => <DashboardLayout {...props}/>}/>
-               {/* <Route children={props=><Footer {...props}/>}/> */}
-               {/* <Route children={props=><Navbar {...props}/>}/> */}
-              </Switch>           
-      </Router>
-     </itemContext.Provider>
-    </div>
+    <Provider store={ reduxStore }>
+      <ThemeProvider theme={ theme === "light" ? lightTheme : darkTheme }>
+        <GlobalStyles />
+        
+        <styledApp>
+          <div className="App"> 
+          <div className="container-fluid">
+            <div className='row text-end'>
+              <div className='col-12 bg-dark py-2'>
+                <button className='btn btn-outline-light text-capitalize' onClick={() => themeToggler()}>Modo { (theme === "light") ? 'Dark' : 'Light' }</button>
+              </div>
+            </div>
+          </div>
+            <itemContext.Provider value={{state: myState, method:dispatch}}>
+            <Router>
+              <Switch>
+                    <Route exact path='/' render={props => <DashboardLayout {...props}/>}/>
+                    <Route path='/login'  render={props => <LoginLayout {...props}/>}/>
+                    <Route path='/register' render={props => <LoginLayout {...props}/>}/>
+                    <Route path='/menu' render={props => <DashboardLayout data={myState} {...props}/>}/>
+                    <Route path='/hot' render={props => <DashboardLayout data={myState} {...props}/>}/>
+                    <Route path='/new' render={props => <DashboardLayout data={myState} {...props}/>}/>
+                    <Route path='/rising' render={props => <DashboardLayout data={myState} {...props}/>}/>
+                    <Route path='/editProfile' render={props => <DashboardLayout {...props}/>}/>
+                    <Route path='/checkout' render={props => <DashboardLayout {...props}/>}/>
+                    {/* <Route children={props=><Footer {...props}/>}/> */}
+                    {/* <Route children={props=><Navbar {...props}/>}/> */}
+                    </Switch>           
+            </Router>
+          </itemContext.Provider>
+          </div>
+        </styledApp>
+      </ThemeProvider>
+    </Provider>
   );
 }
 
