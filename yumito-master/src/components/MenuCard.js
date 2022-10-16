@@ -2,7 +2,6 @@ import React,{useContext} from 'react'
 import {itemContext} from '../App';
 
 function MenuCard({data}) {
-    //console.log("menucard rendered");
     const iL = useContext(itemContext);
     
     return (

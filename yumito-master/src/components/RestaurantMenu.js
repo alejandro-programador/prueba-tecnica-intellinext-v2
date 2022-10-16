@@ -32,7 +32,14 @@ function RestaurantMenu(props) {
       <div className='dataMain container-fluid'>
         <div className='row justify-content-center pb-5'>
         {
-          items.map( (post, index) => {
+          items.length <= 0 ? 
+          <div class="spinner-border text-primary" role="status">
+          </div>
+          :
+          null
+        }
+        {
+          items.length > 0 && items.map( (post, index) => {
             return (
                 <MenuCard data={post.data} key={index} /> 
               )
