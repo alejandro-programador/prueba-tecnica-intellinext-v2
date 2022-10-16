@@ -1,0 +1,12 @@
+#home-img{
+    height:100vh;
+    object-fit:cover;
+    width:100%;
+    position:center left;
+}
+
+.full-container-fluid{
+    justify-content: center !important;
+    text-align: center !important;
+    display: flex;
+}
