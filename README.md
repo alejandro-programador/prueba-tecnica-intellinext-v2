@@ -12,6 +12,6 @@
 
 5. Una vez cargado, ingrese a su explorador y escriba "localhost:[ruta del puerto correspondiente]".
 
-Listo.
+✔️ Listo.
 
 **By: Alejandro Perez. ⭐⭐⭐⭐⭐**
