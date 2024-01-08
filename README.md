@@ -1,5 +1,6 @@
 ### Actualizado 2024.
-# ⭐ Intelli-next ⭐
+# ⭐ Intelli-next (PROYECTO GANADOR DEL PUESTO) ⭐
+#### Descripcion: App web de noticias que se conecta a la app de reddit y ordena los resultados en diferentes categorias.
 
 ## Pasos a seguir: 🚀
 
