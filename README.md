@@ -5,7 +5,7 @@
 
 1. Descargue la carpeta que contiene los archivos del programa.
 
-2. Entre a la ruta de la carpeta mediante su consola de comandos/
+2. Mediante la consola de comandos escriba "cd yumito-master" sin las comillas y presione enter.
 
 3. Escriba "npm i" sin las comillas y presione enter.
 
